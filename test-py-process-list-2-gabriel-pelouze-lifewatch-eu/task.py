@@ -4,6 +4,7 @@ import json
 import os
 arg_parser = argparse.ArgumentParser()
 
+secret_word = os.getenv('secret_word')
 
 arg_parser.add_argument('--id', action='store', type=str, required=True, dest='id')
 
@@ -21,6 +22,5 @@ names = json.loads(args.names)
 
 
 for name in names:
-  print(f"Hello, {name}!")
-  print(f"")
+  print(f"Hello, {name}! This is the secret word: {secret_word}")
 
